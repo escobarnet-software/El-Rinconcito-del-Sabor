@@ -59,22 +59,28 @@
   const turnos = d => (C.horario[d] || []).map(([a, b]) => [toMin(a), toMin(b) <= toMin(a) ? toMin(b) + 1440 : toMin(b)]);
 
   function estado(now = ahora()) {
-    for (const [a, b] of turnos(now.dia)) if (now.min >= a && now.min < b) return { abierto: true, cierra: b };
+    for (const [a, b] of turnos(now.dia)) if (now.min >= a && now.min < b) return { abierto: true, abre: a, cierra: b, now };
     // turno de ayer que pasa de medianoche
     const ayer = (now.dia + 6) % 7;
-    for (const [a, b] of turnos(ayer)) if (b > 1440 && now.min < b - 1440) return { abierto: true, cierra: b - 1440 };
+    for (const [a, b] of turnos(ayer)) if (b > 1440 && now.min < b - 1440) return { abierto: true, abre: a - 1440, cierra: b - 1440, now };
     for (let k = 0; k < 8; k++) {
       const d = (now.dia + k) % 7;
-      for (const [a] of turnos(d)) if (k > 0 || a > now.min) return { abierto: false, abreDia: k, abreMin: a, abreNombre: d };
+      for (const [a, b] of turnos(d)) if (k > 0 || a > now.min) return { abierto: false, abreDia: k, abreMin: a, cierraMin: b, abreNombre: d, now };
     }
     return { abierto: false };
   }
 
   function textoEstado(e) {
-    if (e.abierto) return { corto: 'Abierto ahora', largo: `Abierto ahora · cierra a las ${hora12(e.cierra)}` };
-    if (e.abreDia == null) return { corto: 'Cerrado', largo: 'Cerrado por ahora' };
+    if (e.abierto) return {
+      corto: 'Abierto ahora', largo: `Abierto ahora · cierra a las ${hora12(e.cierra)}`,
+      titulo: 'Estamos abiertos', detalle: `Hoy de ${hora12(e.abre)} a ${hora12(e.cierra)}`,
+    };
+    if (e.abreDia == null) return { corto: 'Cerrado', largo: 'Cerrado por ahora', titulo: 'Estamos cerrados', detalle: 'Escríbenos por WhatsApp' };
     const cuando = e.abreDia === 0 ? 'hoy' : e.abreDia === 1 ? 'mañana' : `el ${DIAS[e.abreNombre]}`;
-    return { corto: 'Cerrado', largo: `Cerrado · abre ${cuando} a las ${hora12(e.abreMin)}` };
+    return {
+      corto: 'Cerrado', largo: `Cerrado · abre ${cuando} a las ${hora12(e.abreMin)}`,
+      titulo: 'Estamos cerrados', detalle: `Abre ${cuando} a las ${hora12(e.abreMin)}, hasta las ${hora12(e.cierraMin)}`,
+    };
   }
 
   function pintarEstado() {
@@ -82,12 +88,38 @@
     const t = textoEstado(e);
     $$('[data-estado]').forEach(el => {
       el.dataset.abierto = e.abierto ? 'si' : 'no';
-      const txt = el.querySelector('[data-estado-texto]') || el;
-      txt.textContent = el.hasAttribute('data-estado-corto') ? t.corto : t.largo;
+      const txt = el.querySelector('[data-estado-texto]');
+      if (txt) txt.textContent = el.hasAttribute('data-estado-corto') ? t.corto : t.largo;
     });
+    $$('[data-estado-titulo]').forEach(el => { el.textContent = t.titulo; });
+    $$('[data-estado-detalle]').forEach(el => { el.textContent = t.detalle; });
+    pintarReloj(e);
     const hoy = ahora().dia;
     $$('[data-dia]').forEach(row => row.classList.toggle('is-today', +row.dataset.dia === hoy));
     document.documentElement.dataset.abierto = e.abierto ? 'si' : 'no';
+  }
+
+  // Reloj en vivo, barra del día y cuánto falta para abrir o cerrar
+  const dur = m => { const h = Math.floor(m / 60), r = m % 60; return h ? `${h} h${r ? ` ${r} min` : ''}` : `${r} min`; };
+  function pintarReloj(e) {
+    const now = e.now || ahora();
+    $$('[data-reloj]').forEach(el => { el.textContent = hora12(now.min); });
+    const barra = $('[data-dia-barra]');
+    if (barra) {
+      const t = turnos(now.dia)[0];
+      const ab = $('[data-barra-abierto]', barra), ah = $('[data-barra-ahora]', barra);
+      if (t) { ab.style.left = (t[0] / 1440 * 100) + '%'; ab.style.width = ((Math.min(t[1], 1440) - t[0]) / 1440 * 100) + '%'; ab.hidden = false; }
+      else ab.hidden = true;
+      ah.style.left = (now.min / 1440 * 100) + '%';
+    }
+    const falta = $('[data-falta]');
+    if (falta) {
+      if (e.abierto) falta.textContent = `Cerramos en ${dur(e.cierra - now.min)}.`;
+      else if (e.abreDia != null) falta.textContent = `Abrimos en ${dur(e.abreDia * 1440 + e.abreMin - now.min)}.`;
+      else falta.textContent = '';
+    }
+    const ph = $('[data-panel-hora]');
+    if (ph) ph.textContent = e.abierto ? `Listo en unos ${C.minutosPreparacion} minutos.` : `Ahora estamos cerrados: tu pedido queda para ${e.abreDia === 1 ? 'mañana' : e.abreDia === 0 ? 'hoy' : 'la siguiente apertura'} desde las ${hora12(e.abreMin + C.intervaloRecogida)}.`;
   }
 
   // Filas del horario, agrupando días seguidos con el mismo horario
@@ -149,7 +181,7 @@
           ${p.descripcion ? `<span class="dish__desc">${esc(p.descripcion)}</span>` : ''}
           <span class="dish__foot"><span class="dish__price">${money(p.precio)}</span><span class="dish__count" data-count hidden></span></span>
         </span>
-        <span class="dish__add" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 3v10M3 8h10"/></svg></span>
+        <span class="dish__add" aria-hidden="true"><svg><use href="#g-plus"/></svg></span>
       </button>
     </li>`;
   }
@@ -158,11 +190,22 @@
     if (!root) return;
     root.innerHTML = C.categorias.map(cat => `
       <section class="menu-group" id="cat-${cat.id}" aria-labelledby="cat-${cat.id}-h">
-        <h3 class="menu-group__h" id="cat-${cat.id}-h">${esc(cat.nombre)}</h3>
+        <h3 class="menu-group__h" id="cat-${cat.id}-h">${esc(cat.nombre)} <span class="menu-group__n">${cat.platillos.length} platillos</span></h3>
         <ul class="dishes">${cat.platillos.map(cardHTML).join('')}</ul>
       </section>`).join('');
     const chips = $('[data-chips]');
-    if (chips) chips.innerHTML = C.categorias.map(cat => `<a class="chip" href="#cat-${cat.id}">${esc(cat.nombre)}</a>`).join('');
+    if (chips) chips.innerHTML = C.categorias.map(cat => `<a class="chip" href="#cat-${cat.id}">${esc(cat.nombre)}</a>`).join('') + '<span class="tabs__ink" aria-hidden="true"></span>';
+    const favs = $('[data-favs]');
+    if (favs) favs.innerHTML = (C.destacados || []).map(id => byId.get(id)).filter(Boolean).map((p, i) => `
+      <li class="fav fav--${i % 4}" data-id="${p.id}" data-reveal style="--d:${[0, 90, 160, 220][i % 4]}ms">
+        <button class="fav__btn" type="button" aria-haspopup="dialog" aria-label="Agregar ${esc(p.nombre)}, ${money(p.precio)}">
+          <span class="fav__plate"><img src="img/menu/${p.foto}.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span>
+          <span class="fav__name">${esc(p.nombre)}</span>
+          ${p.descripcion ? `<span class="fav__desc">${esc(p.descripcion)}</span>` : ''}
+          <span class="fav__foot"><span class="fav__price">${money(p.precio)}</span><span class="fav__add"><svg aria-hidden="true"><use href="#g-plus"/></svg>Agregar</span></span>
+          <span class="dish__count" data-count hidden></span>
+        </button>
+      </li>`).join('');
   }
 
   /* ------------------------------------------------------ hoja inferior
@@ -317,16 +360,17 @@
     announce(`${qty} ${current.nombre} agregado al pedido. Total ${money(total())}.`);
   });
 
-  $('[data-menu]')?.addEventListener('click', e => {
-    const btn = e.target.closest('.dish__btn'); if (!btn) return;
-    openItem(btn.closest('.dish').dataset.id, btn);
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('button.dish__btn, .fav__btn'); if (!btn) return;
+    openItem(btn.closest('[data-id]').dataset.id, btn);
   });
 
   /* El platillo vuela hacia la barra del pedido: muestra a dónde fue.
      X avanza con ease-out y Y con ease-in en capas separadas: un arco. */
   function fly(src, r, wasEmpty) {
-    const bar = $('.cartbar');
-    const target = $('.cartbar__count', bar);
+    const panel = $('[data-panel]');
+    const enPanel = !!panel && getComputedStyle(panel).display !== 'none';
+    const target = enPanel ? $('[data-panel-total]') : $('.cartbar__count');
     if (reduce.matches || !target || !r.width) { bump(); return; }
     const go = () => {
       const t = target.getBoundingClientRect();
@@ -347,12 +391,10 @@
         .onfinish = () => { outer.remove(); bump(); };
     };
     // la barra recién aparece: esperar a que esté en su sitio
-    if (wasEmpty) setTimeout(go, 140); else go();
+    if (wasEmpty && !enPanel) setTimeout(go, 140); else go();
   }
   function bump() {
-    const c = $('.cartbar__count');
-    if (!c) return;
-    c.classList.remove('is-bump'); void c.offsetWidth; c.classList.add('is-bump');
+    $$('.cartbar__count, [data-panel-total]').forEach(c => { c.classList.remove('is-bump'); void c.offsetWidth; c.classList.add('is-bump'); });
   }
 
   /* ------------------------------------------------------- barra y hoja */
@@ -364,13 +406,21 @@
     $$('[data-cart-label]').forEach(el => { el.textContent = n === 1 ? '1 platillo' : `${n} platillos`; });
     const bar = $('.cartbar');
     if (bar) { bar.inert = !n; bar.setAttribute('aria-hidden', n ? 'false' : 'true'); }
-    $$('.dish').forEach(li => {
+    renderPanel();
+    $$('.dish, .fav').forEach(li => {
       const q = qtyOf(li.dataset.id); const c = $('[data-count]', li);
       if (!c) return;
       c.hidden = !q; c.textContent = q ? `${q} en tu pedido` : '';
       li.classList.toggle('is-in', !!q);
     });
     if (cartDlg.open) renderLines();
+  }
+
+  function renderPanel() {
+    const ul = $('[data-panel-lines]'); if (!ul) return;
+    $('[data-panel-empty]').hidden = cart.length > 0;
+    ul.innerHTML = cart.map(l => { const p = byId.get(l.id); return `<li><span class="panel__q">${l.qty}×</span><span class="panel__n">${esc(p.nombre)}${l.nota ? `<small>${esc(l.nota)}</small>` : ''}</span><span class="panel__p">${money(p.precio * l.qty)}</span></li>`; }).join('');
+    const b = $('[data-panel] [data-open-cart]'); if (b) b.disabled = !cart.length;
   }
 
   function lineHTML(l, i) {
@@ -513,15 +563,6 @@
     }, { rootMargin: '-40% 0px -55% 0px' });
     $$('.menu-group').forEach(g => io2.observe(g));
   }
-  // En el menú y en el pie el botón fijo "Pedir para llevar" sobra y tapa platillos: se esconde
-  if ('IntersectionObserver' in window) {
-    const zonas = new Set();
-    const io3 = new IntersectionObserver(es => {
-      es.forEach(en => en.isIntersecting ? zonas.add(en.target) : zonas.delete(en.target));
-      document.documentElement.toggleAttribute('data-bar-off', zonas.size > 0);
-    });
-    ['#menu', 'footer.closing'].forEach(sel => { const el = $(sel); el && io3.observe(el); });
-  }
-  setInterval(() => { pintarEstado(); if (cartDlg.open) renderSlots(); }, 30000);
+  setInterval(() => { pintarEstado(); if (cartDlg.open) renderSlots(); }, 20000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) pintarEstado(); });
 })();

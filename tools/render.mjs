@@ -10,7 +10,7 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;'
 const fmt = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const money = n => C.moneda + fmt.format(n);
 const card = p => `<li class="dish" data-id="${p.id}"><div class="dish__btn"><span class="dish__img"><img src="img/menu/${p.foto}.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">${esc(p.nombre)}</span>${p.descripcion ? `<span class="dish__desc">${esc(p.descripcion)}</span>` : ''}<span class="dish__foot"><span class="dish__price">${money(p.precio)}</span></span></span></div></li>`;
-const menu = C.categorias.map(cat => `<section class="menu-group" id="cat-${cat.id}" aria-labelledby="cat-${cat.id}-h"><h3 class="menu-group__h" id="cat-${cat.id}-h">${esc(cat.nombre)}</h3><ul class="dishes">${cat.platillos.map(card).join('')}</ul></section>`).join('\n');
+const menu = C.categorias.map(cat => `<section class="menu-group" id="cat-${cat.id}" aria-labelledby="cat-${cat.id}-h"><h3 class="menu-group__h" id="cat-${cat.id}-h">${esc(cat.nombre)} <span class="menu-group__n">${cat.platillos.length} platillos</span></h3><ul class="dishes">${cat.platillos.map(card).join('')}</ul></section>`).join('\n');
 const chips = C.categorias.map(cat => `<a class="chip" href="#cat-${cat.id}">${esc(cat.nombre)}</a>`).join('');
 const DIAS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
 const h12 = s => { let [h, m] = s.split(':').map(Number); const suf = h < 12 ? 'a.\u00a0m.' : 'p.\u00a0m.'; h = h % 12 || 12; return `${h}:${String(m).padStart(2, '0')}\u00a0${suf}`; };

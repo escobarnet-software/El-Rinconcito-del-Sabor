@@ -1,17 +1,16 @@
 <!doctype html>
-<html lang="es" data-type="place" data-radius="soft" data-buttons="arrow" data-motion>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
-<title>El Rinconcito del Sabor: restaurante y pedidos para llevar en Suchitoto</title>
-<meta name="description" content="Arma tu pedido para llevar con fotos y precios, escoge la hora de recogida y envíalo por WhatsApp. 4.8 en Google, en Suchitoto, Cuscatlán.">
-<!-- og:image necesita la URL completa. Si cambia el dominio, actualízala
-     (https://<usuario>.github.io/<repositorio>/share.jpg) o en el dominio del restaurante. -->
+<title>El Rinconcito del Sabor · Restaurante en Suchitoto · Pedidos para llevar</title>
+<meta name="description" content="Parrilla, mariscos, tacos y hamburguesas en Suchitoto. Mira el menú con fotos y precios, arma tu pedido para llevar y envíalo por WhatsApp.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_SV">
 <meta property="og:site_name" content="El Rinconcito del Sabor">
 <meta property="og:title" content="El Rinconcito del Sabor · Pedidos para llevar en Suchitoto">
 <meta property="og:description" content="Mira el menú con fotos y precios, arma tu pedido y envíalo por WhatsApp. Lo recoges en el local.">
+<!-- og:image necesita la URL completa. Si cambia el dominio, actualízala. -->
 <meta property="og:image" content="https://escobarnet-software.github.io/El-Rinconcito-del-Sabor/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,185 +18,256 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/logo.png">
-<meta name="theme-color" content="#f5f0e6">
+<meta name="theme-color" content="#fbf3e4">
 <meta name="color-scheme" content="light">
-<!-- <link rel="canonical" href="https://<dominio del restaurante>/"> -->
-<meta name="site-kind" content="other">
-<meta name="page-type" content="place">
-<meta name="page-kind" content="place">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..600;1,400&family=Nunito+Sans:wght@400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
-<style>
-:root {
-  --p-bg: #f5f0e6; --p-surface: #ebe2d1; --p-ink: #1b2a4e; --p-muted: #5b5648;
-  --p-accent: #a63a24; --p-accent-ink: #f5f0e6; --p-action: #a63a24; --p-action-ink: #f5f0e6;
-  --p-inv-bg: #1b2a4e; --p-inv-surface: #283658; --p-inv-ink: #f5f0e6; --p-inv-muted: #a1a6b0;
-  --p-inv-accent: #f5f0e6; --p-inv-accent-ink: #1b2a4e; --p-inv-action: #f5f0e6; --p-inv-action-ink: #1b2a4e;
-  --font-display: "Lora", Georgia, serif;
-  --font-text: "Nunito Sans", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.015em;
-}
-</style>
-<link rel="stylesheet" href="css/app.css">
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js"><link rel="modulepreload" href="assets/moments/lib.js"><link rel="modulepreload" href="assets/moments/picture-develops/moment.js">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Nunito+Sans:opsz,wght@6..12,400..700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js-on')</script>
 </head>
 <body>
-<!-- type: place (restaurante con pedidos para llevar)
-     deal: hero place (fijo), nav-split, footer-visit, rhythm surface-pairs (+ banda añil en el museo),
-     buttons arrow, mark: logo del cliente, offer: menú de pedido (pedido del cliente), place: trio,
-     type moment: address, moment: picture-develops (museo)
-     palette: brand (cal #f5f0e6, añil #1b2a4e, teja #a63a24), type: Lora / Nunito Sans -->
 
-<header class="nav nav--split">
-  <p class="preview-strip">Vista previa · horario y precios por confirmar</p>
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Saltar al contenido</a>
-    <a class="nav__logo" href="#top" aria-label="El Rinconcito del Sabor, inicio"><img class="nav__logo-img" src="img/logo-128.webp" alt="" width="128" height="125"><span class="nav__logo-name">El Rinconcito del Sabor</span></a>
-    <nav class="nav__links" aria-label="Principal">
-      <div class="nav__item"><a class="nav__link" href="#menu">Menú</a></div>
-      <div class="nav__item"><a class="nav__link" href="#horario">Horario</a></div>
-      <div class="nav__item"><a class="nav__link" href="#museo">Museo</a></div>
-      <div class="nav__item"><a class="nav__link" href="#ubicacion">Ubicación</a></div>
+<!-- Gráficos sacados del logo: sol, ciprés, flor del azulejo, casita. Se usan con <use>. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="g-sol" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><circle cx="50" cy="50" r="18"/><path d="M50 8v12M50 80v12M8 50h12M80 50h12M20 20l8.5 8.5M71.5 71.5 80 80M80 20l-8.5 8.5M28.5 71.5 20 80"/></g></symbol>
+    <symbol id="g-cipres" viewBox="0 0 40 120"><path d="M20 4C30 26 34 54 33 78c-1 14-6 22-13 22S8 92 7 78C6 54 10 26 20 4z" fill="currentColor"/><rect x="17.5" y="98" width="5" height="18" rx="2" fill="#5a3418"/></symbol>
+    <symbol id="g-flor" viewBox="0 0 40 40"><g transform="translate(20 20)"><g fill="currentColor"><ellipse rx="5.5" ry="11" cy="-9"/><ellipse rx="5.5" ry="11" cy="-9" transform="rotate(72)"/><ellipse rx="5.5" ry="11" cy="-9" transform="rotate(144)"/><ellipse rx="5.5" ry="11" cy="-9" transform="rotate(216)"/><ellipse rx="5.5" ry="11" cy="-9" transform="rotate(288)"/></g><circle r="5" fill="#e3a83b"/></g></symbol>
+    <symbol id="g-hoja" viewBox="0 0 40 20"><path d="M2 10C10 1 26 1 38 10 26 19 10 19 2 10z" fill="currentColor"/></symbol>
+    <symbol id="g-casa" viewBox="0 0 64 56"><path d="M6 26 32 6l26 20" fill="none" stroke="#b8492a" stroke-width="6" stroke-linejoin="round"/><path d="M12 26h40v26H12z" fill="#fbf3e4" stroke="#2b170c" stroke-width="3"/><rect x="27" y="34" width="10" height="18" fill="#5b7b10"/><rect x="40" y="32" width="8" height="8" fill="#b8492a"/></symbol>
+    <symbol id="g-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.43 9.42zm8.02-17.45A11.27 11.27 0 0 0 12.04.75C5.8.75.72 5.83.72 12.07c0 2 .52 3.94 1.51 5.65L.62 23.25l5.66-1.48a11.3 11.3 0 0 0 5.75 1.47h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.02-1.18-5.87-3.31-8z"/></symbol>
+    <symbol id="g-star" viewBox="0 0 20 20"><path fill="currentColor" d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></symbol>
+    <symbol id="g-plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="g-flecha" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="g-reloj" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="g-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+    <symbol id="g-bolsa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M5 8h14l-1 13H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round"/></g></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top" data-top>
+  <p class="strip">Vista previa · horario y precios por confirmar</p>
+  <div class="top__bar wrap">
+    <a class="brand" href="#inicio" aria-label="El Rinconcito del Sabor, inicio">
+      <img src="img/logo-128.webp" alt="" width="128" height="125">
+      <span class="brand__name">El Rinconcito <em>del Sabor</em></span>
+    </a>
+    <nav class="top__nav" aria-label="Principal">
+      <a href="#menu">Menú</a><a href="#horario">Horario</a><a href="#museo">Museo</a><a href="#ubicacion">Ubicación</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="#menu">Pedir para llevar</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menú de navegación">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+    <p class="pill-status" data-estado data-estado-corto><span class="dot" aria-hidden="true"></span><span data-estado-texto>Horario</span></p>
+    <a class="btn btn--teja btn--sm top__cta" href="#menu"><svg aria-hidden="true"><use href="#g-bolsa"/></svg>Pedir para llevar</a>
+    <button class="top__menu" type="button" aria-expanded="false" aria-controls="menu-movil" data-menu-btn><span class="sr">Abrir menú de navegación</span><i aria-hidden="true"></i><i aria-hidden="true"></i></button>
   </div>
+  <nav class="movil" id="menu-movil" aria-label="Menú móvil" hidden>
+    <a href="#menu">Menú para llevar</a><a href="#horario">Horario</a><a href="#museo">El museo</a><a href="#ubicacion">Cómo llegar</a>
+    <a class="btn btn--teja" href="#menu">Pedir para llevar</a>
+  </nav>
 </header>
 
-<main id="top">
-  <section class="hero hero--place" data-enter aria-labelledby="hero-h">
-    <picture class="hero__bg" data-phone-fill style="--ly-pos: 50% 62%; --ly-pos-phone: 50% 55%"><source media="(max-width: 639px)" srcset="assets/img/photo-f28544787-780x975.webp 780w" sizes="100vw"><img src="assets/img/photo-f28544787-1280.webp" srcset="assets/img/photo-f28544787-500.webp 500w, assets/img/photo-f28544787-960.webp 960w, assets/img/photo-f28544787-1280.webp 1280w" sizes="100vw" width="1280" height="1707" alt="Techos de teja y calles del centro histórico de Suchitoto, con los cerros al fondo" fetchpriority="high" decoding="async" data-source="stand-in" data-subject="Suchitoto, centro histórico"></picture>
-    <div class="wrap"><div class="hero-text">
+<main id="contenido">
+
+  <!-- ===================================================== PORTADA -->
+  <section class="hero" id="inicio" aria-labelledby="hero-h">
+    <div class="hero__bg" aria-hidden="true">
+      <svg class="deco deco--sol" data-parallax="-0.12"><use href="#g-sol"/></svg>
+      <svg class="deco deco--flor1" data-parallax="0.2"><use href="#g-flor"/></svg>
+      <svg class="deco deco--flor2" data-parallax="-0.08"><use href="#g-flor"/></svg>
+    </div>
+    <div class="wrap hero__grid">
       <div class="hero__text">
-        <h1 id="hero-h">El Rinconcito del Sabor, en Suchitoto</h1>
-        <div class="hero__side">
-          <p class="hero__lead"><span class="rating"><svg class="rating__star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z"/></svg>4.8 en Google, más de 150 reseñas.</span> Pide para llevar y pasa a recoger.</p>
-          <p class="status" data-estado aria-live="polite"><span data-estado-texto>Todos los días de 12:00 p. m. a 10:00 p. m.</span></p>
-          <div class="btn-row"><a class="btn btn--primary" href="#menu">Pedir para llevar</a></div>
+        <p class="eyebrow" data-in="0"><svg aria-hidden="true"><use href="#g-pin"/></svg>Suchitoto · Cuscatlán<span class="eyebrow__sv"> · El Salvador</span></p>
+        <h1 id="hero-h" class="hero__h">
+          <span class="hero__l1" data-in="1">El Rinconcito</span>
+          <span class="hero__l2" data-in="2">del Sabor</span>
+        </h1>
+        <p class="hero__lead" data-in="3">Parrilla, mariscos, tacos y hamburguesas de la casa, en el centro colonial de Suchitoto. Pide para llevar por WhatsApp y pasa a recogerlo.</p>
+        <div class="hero__cards" data-in="4">
+          <div class="mini mini--rating">
+            <span class="mini__big">4.8</span>
+            <span class="mini__body"><span class="stars" aria-hidden="true"><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg></span><span>de nuestros clientes</span></span>
+          </div>
+          <div class="mini mini--hours" data-estado>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="mini__body"><b data-estado-titulo>Horario</b><span data-estado-detalle>Todos los días de 12:00 p. m. a 10:00 p. m.</span></span>
+          </div>
+        </div>
+        <div class="hero__btns" data-in="5">
+          <a class="btn btn--teja btn--lg" href="#menu"><svg aria-hidden="true"><use href="#g-bolsa"/></svg>Pedir para llevar</a>
+          <a class="btn btn--ghost btn--lg" href="#favoritos">Ver los favoritos<svg aria-hidden="true"><use href="#g-flecha"/></svg></a>
         </div>
       </div>
-    </div></div>
+
+      <div class="hero__art" aria-hidden="true">
+        <svg class="cipres cipres--a" data-parallax="0.06"><use href="#g-cipres"/></svg>
+        <svg class="cipres cipres--b" data-parallax="0.1"><use href="#g-cipres"/></svg>
+        <div class="arch arch--hero" data-arch>
+          <img data-parallax-img="0.07" src="assets/img/photo-f28544787-960.webp" srcset="assets/img/photo-f28544787-500.webp 500w, assets/img/photo-f28544787-960.webp 960w, assets/img/photo-f28544787-1280.webp 1280w" sizes="(max-width: 900px) 80vw, 460px" width="960" height="1280" alt="" fetchpriority="high">
+        </div>
+        <div class="plate plate--1" data-parallax="-0.18"><div class="plate__in"><img src="img/menu/parrillada-2.webp" alt="" width="188" height="188"></div></div>
+        <div class="plate plate--2" data-parallax="-0.3"><div class="plate__in"><img src="img/menu/taquiza-12.webp" alt="" width="188" height="188"></div></div>
+        <div class="plate plate--3" data-parallax="-0.1"><div class="plate__in"><img src="img/menu/azulito.webp" alt="" width="188" height="188"></div></div>
+        <div class="badge" data-parallax="-0.22">
+          <svg class="badge__ring" viewBox="0 0 200 200"><defs><path id="circulo" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#circulo">PEDIDOS PARA LLEVAR · POR WHATSAPP · </textPath></text></svg>
+          <svg class="badge__casa"><use href="#g-casa"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="tiles" aria-hidden="true"></div>
   </section>
 
-  <section class="section section--menu" id="menu" aria-labelledby="menu-h">
+  <!-- ===================================================== FAVORITOS -->
+  <section class="sec favs" id="favoritos" aria-labelledby="favs-h">
     <div class="wrap">
-      <div class="section-head--split menu-head">
-        <h2 id="menu-h">Menú para llevar</h2>
-        <p>Toca un platillo, dinos cuántos y si lo quieres sin algo. Envías el pedido por WhatsApp y lo recoges en el local.</p>
+      <div class="head" data-reveal>
+        <p class="kicker">Lo más pedido</p>
+        <h2 id="favs-h">Los favoritos <span class="script">de la casa</span></h2>
+        <p class="head__lead">Para compartir en la mesa o llevar a casa. Tócalo y agrégalo a tu pedido.</p>
       </div>
-      <nav class="chips" aria-label="Categorías del menú" data-chips>
+      <ul class="favs__list" data-favs></ul>
+    </div>
+  </section>
+
+  <!-- ===================================================== MENÚ -->
+  <section class="sec menu" id="menu" aria-labelledby="menu-h">
+    <div class="wrap">
+      <div class="menu__top">
+        <div class="head" data-reveal>
+          <p class="kicker">Pedidos para llevar</p>
+          <h2 id="menu-h">Nuestro <span class="script">menú</span></h2>
+        </div>
+        <ol class="steps" data-reveal>
+          <li><span class="steps__n">1</span><span><b>Escoge</b> tus platillos y agrega notas</span></li>
+          <li><span class="steps__n">2</span><span><b>Elige</b> la hora a la que recoges</span></li>
+          <li><span class="steps__n">3</span><span><b>Envía</b> el pedido por WhatsApp</span></li>
+        </ol>
+      </div>
+      <nav class="tabs" aria-label="Categorías del menú" data-chips>
         <!--chips:start--><a class="chip" href="#cat-parrilla">Parrilla y platos fuertes</a><a class="chip" href="#cat-mariscos">Mariscos</a><a class="chip" href="#cat-antojitos">Tacos, tortas y antojitos</a><a class="chip" href="#cat-hamburguesas">Hamburguesas</a><a class="chip" href="#cat-bebidas">Bebidas y postre</a><!--chips:end-->
       </nav>
-      <div class="menu" data-menu>
-        <!--menu:start--><section class="menu-group" id="cat-parrilla" aria-labelledby="cat-parrilla-h"><h3 class="menu-group__h" id="cat-parrilla-h">Parrilla y platos fuertes</h3><ul class="dishes"><li class="dish" data-id="parrillada-2"><div class="dish__btn"><span class="dish__img"><img src="img/menu/parrillada-2.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Parrillada para 2 personas</span><span class="dish__desc">Para compartir.</span><span class="dish__foot"><span class="dish__price">$19.00</span></span></span></div></li><li class="dish" data-id="plato-mixto"><div class="dish__btn"><span class="dish__img"><img src="img/menu/plato-mixto.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Plato mixto típico</span><span class="dish__desc">Combinación de filete con acompañamientos típicos.</span><span class="dish__foot"><span class="dish__price">$12.95</span></span></span></div></li><li class="dish" data-id="pescado-frito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pescado-frito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pescado frito</span><span class="dish__desc">Róbalo frito con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$10.00</span></span></span></div></li><li class="dish" data-id="lomito-tipico"><div class="dish__btn"><span class="dish__img"><img src="img/menu/lomito-tipico.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Lomito típico</span><span class="dish__desc">Lomito con acompañamientos típicos.</span><span class="dish__foot"><span class="dish__price">$8.99</span></span></span></div></li><li class="dish" data-id="lomito-parrilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/lomito-parrilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Lomito a la parrilla</span><span class="dish__desc">Lomito a la parrilla con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$8.50</span></span></span></div></li><li class="dish" data-id="pechuga-champinones"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pechuga-champinones.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pechuga en salsa de champiñones</span><span class="dish__desc">6 onzas de pechuga bañada en salsa de champiñones.</span><span class="dish__foot"><span class="dish__price">$8.50</span></span></span></div></li><li class="dish" data-id="chicharrones"><div class="dish__btn"><span class="dish__img"><img src="img/menu/chicharrones.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Chicharrones de carne</span><span class="dish__desc">Chicharrones de carne de la casa.</span><span class="dish__foot"><span class="dish__price">$7.95</span></span></span></div></li><li class="dish" data-id="pechuga-parrilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pechuga-parrilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pechuga a la parrilla</span><span class="dish__desc">Filete de pechuga de 5 onzas.</span><span class="dish__foot"><span class="dish__price">$7.50</span></span></span></div></li></ul></section>
-<section class="menu-group" id="cat-mariscos" aria-labelledby="cat-mariscos-h"><h3 class="menu-group__h" id="cat-mariscos-h">Mariscos</h3><ul class="dishes"><li class="dish" data-id="mar-y-tierra"><div class="dish__btn"><span class="dish__img"><img src="img/menu/mar-y-tierra.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Mar y tierra</span><span class="dish__desc">5 camarones jumbo al ajillo y carne.</span><span class="dish__foot"><span class="dish__price">$14.99</span></span></span></div></li><li class="dish" data-id="camarones-ajillo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/camarones-ajillo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Camarones al ajillo</span><span class="dish__desc">Camarones al ajillo con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="camarones-empanizados"><div class="dish__btn"><span class="dish__img"><img src="img/menu/camarones-empanizados.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Camarones empanizados</span><span class="dish__desc">Camarones empanizados de la casa.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="coctel-rosada"><div class="dish__btn"><span class="dish__img"><img src="img/menu/coctel-rosada.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cóctel en salsa rosada</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="tacos-camaron"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-camaron.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de camarón</span><span class="dish__desc">3 tacos de camarón con queso.</span><span class="dish__foot"><span class="dish__price">$5.25</span></span></span></div></li></ul></section>
-<section class="menu-group" id="cat-antojitos" aria-labelledby="cat-antojitos-h"><h3 class="menu-group__h" id="cat-antojitos-h">Tacos, tortas y antojitos</h3><ul class="dishes"><li class="dish" data-id="comal-mexicano"><div class="dish__btn"><span class="dish__img"><img src="img/menu/comal-mexicano.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Comal mexicano</span><span class="dish__desc">Torta, burrito y más, para compartir.</span><span class="dish__foot"><span class="dish__price">$26.95</span></span></span></div></li><li class="dish" data-id="cazuela-alambre"><div class="dish__btn"><span class="dish__img"><img src="img/menu/cazuela-alambre.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cazuela de tacos de alambre</span><span class="dish__desc">Perfecta para compartir.</span><span class="dish__foot"><span class="dish__price">$18.99</span></span></span></div></li><li class="dish" data-id="taquiza-12"><div class="dish__btn"><span class="dish__img"><img src="img/menu/taquiza-12.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Taquiza de 12 tacos</span><span class="dish__desc">12 tacos de carne.</span><span class="dish__foot"><span class="dish__price">$15.95</span></span></span></div></li><li class="dish" data-id="nacho-familiar"><div class="dish__btn"><span class="dish__img"><img src="img/menu/nacho-familiar.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Nacho familiar</span><span class="dish__desc">Nachos familiares para compartir.</span><span class="dish__foot"><span class="dish__price">$9.00</span></span></span></div></li><li class="dish" data-id="tacos-birria"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-birria.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de birria, 4 unidades</span><span class="dish__desc">La orden de 3 cuesta $5.50.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="torta-birria"><div class="dish__btn"><span class="dish__img"><img src="img/menu/torta-birria.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Torta de birria</span><span class="dish__desc">Delicia de la casa.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="alitas"><div class="dish__btn"><span class="dish__img"><img src="img/menu/alitas.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Alitas búfalo o barbacoa</span><span class="dish__desc">Alitas fritas. Dinos la salsa en la nota.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="torta-res-pollo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/torta-res-pollo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Torta de res o pollo</span><span class="dish__desc">Torta rellena de la carne que escojas.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="panini"><div class="dish__btn"><span class="dish__img"><img src="img/menu/panini.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Panini de pollo o res</span><span class="dish__desc">Fajitas de pollo con queso cheddar.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="burrito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/burrito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Burrito de res o pollo</span><span class="dish__desc">Burrito de carne de res o pollo.</span><span class="dish__foot"><span class="dish__price">$5.75</span></span></span></div></li><li class="dish" data-id="sopa-tortilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/sopa-tortilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Sopa de tortilla</span><span class="dish__desc">Sopa de tortilla de la casa.</span><span class="dish__foot"><span class="dish__price">$5.75</span></span></span></div></li><li class="dish" data-id="tacos-res-pollo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-res-pollo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de res o pollo, orden de 3</span><span class="dish__desc">Precio de la orden de pollo; la de res puede variar.</span><span class="dish__foot"><span class="dish__price">$4.75</span></span></span></div></li><li class="dish" data-id="nachos-patu-boca"><div class="dish__btn"><span class="dish__img"><img src="img/menu/nachos-patu-boca.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Nachos Patu Boca</span><span class="dish__desc">Nachos con chili con carne y aguacate.</span><span class="dish__foot"><span class="dish__price">$3.99</span></span></span></div></li></ul></section>
-<section class="menu-group" id="cat-hamburguesas" aria-labelledby="cat-hamburguesas-h"><h3 class="menu-group__h" id="cat-hamburguesas-h">Hamburguesas</h3><ul class="dishes"><li class="dish" data-id="duo-dinamico"><div class="dish__btn"><span class="dish__img"><img src="img/menu/duo-dinamico.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Dúo dinámico</span><span class="dish__desc">2 hamburguesas.</span><span class="dish__foot"><span class="dish__price">$16.99</span></span></span></div></li><li class="dish" data-id="tropical-camaron"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tropical-camaron.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tropical de camarón</span><span class="dish__desc">Hamburguesa premium.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="suprema-tropical"><div class="dish__btn"><span class="dish__img"><img src="img/menu/suprema-tropical.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Suprema tropical</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="y-la-queso"><div class="dish__btn"><span class="dish__img"><img src="img/menu/y-la-queso.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Y la queso</span><span class="dish__desc">2 carnes bañadas en queso cheddar.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="hamburguesa-brava"><div class="dish__btn"><span class="dish__img"><img src="img/menu/hamburguesa-brava.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Hamburguesa brava</span><span class="dish__desc">Hamburguesa de pollo bañada en salsa.</span><span class="dish__foot"><span class="dish__price">$8.99</span></span></span></div></li><li class="dish" data-id="la-grosera"><div class="dish__btn"><span class="dish__img"><img src="img/menu/la-grosera.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La grosera</span><span class="dish__foot"><span class="dish__price">$8.00</span></span></span></div></li><li class="dish" data-id="chiken-pikis"><div class="dish__btn"><span class="dish__img"><img src="img/menu/chiken-pikis.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La Chiken Pikis</span><span class="dish__desc">Hamburguesa de pollo.</span><span class="dish__foot"><span class="dish__price">$7.25</span></span></span></div></li><li class="dish" data-id="traicionera"><div class="dish__btn"><span class="dish__img"><img src="img/menu/traicionera.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Traicionera</span><span class="dish__desc">Doble carne y doble queso.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="la-gruta"><div class="dish__btn"><span class="dish__img"><img src="img/menu/la-gruta.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La Gruta</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$6.75</span></span></span></div></li><li class="dish" data-id="mi-rancho"><div class="dish__btn"><span class="dish__img"><img src="img/menu/mi-rancho.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Mi Rancho</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$6.75</span></span></span></div></li><li class="dish" data-id="pica-rico-chipotle"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pica-rico-chipotle.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pica Rico Chipotle</span><span class="dish__desc">Carne de res con salsa chipotle.</span><span class="dish__foot"><span class="dish__price">$6.50</span></span></span></div></li></ul></section>
-<section class="menu-group" id="cat-bebidas" aria-labelledby="cat-bebidas-h"><h3 class="menu-group__h" id="cat-bebidas-h">Bebidas y postre</h3><ul class="dishes"><li class="dish" data-id="pina-colada"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pina-colada.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Piña colada con licor</span><span class="dish__desc">Jugo de piña y coco.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="rosita-fresita"><div class="dish__btn"><span class="dish__img"><img src="img/menu/rosita-fresita.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Rosita fresita</span><span class="dish__desc">Jugo de granadina y tequila.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="dulce-amanecer"><div class="dish__btn"><span class="dish__img"><img src="img/menu/dulce-amanecer.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Dulce amanecer</span><span class="dish__desc">Ron, jugo de naranja y vodka.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="azulito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/azulito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Azulito</span><span class="dish__desc">Tequila, jugo de naranja y soda.</span><span class="dish__foot"><span class="dish__price">$4.00</span></span></span></div></li><li class="dish" data-id="michelada-maracuya"><div class="dish__btn"><span class="dish__img"><img src="img/menu/michelada-maracuya.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Michelada de maracuyá</span><span class="dish__foot"><span class="dish__price">$4.00</span></span></span></div></li><li class="dish" data-id="cheesecake"><div class="dish__btn"><span class="dish__img"><img src="img/menu/cheesecake.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cheesecake de maracuyá, mora o fresa</span><span class="dish__desc">Incluye café. Dinos el sabor en la nota.</span><span class="dish__foot"><span class="dish__price">$3.95</span></span></span></div></li></ul></section><!--menu:end-->
+      <div class="menu__layout">
+        <div class="menu__list" data-menu>
+          <!--menu:start--><section class="menu-group" id="cat-parrilla" aria-labelledby="cat-parrilla-h"><h3 class="menu-group__h" id="cat-parrilla-h">Parrilla y platos fuertes <span class="menu-group__n">8 platillos</span></h3><ul class="dishes"><li class="dish" data-id="parrillada-2"><div class="dish__btn"><span class="dish__img"><img src="img/menu/parrillada-2.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Parrillada para 2 personas</span><span class="dish__desc">Para compartir.</span><span class="dish__foot"><span class="dish__price">$19.00</span></span></span></div></li><li class="dish" data-id="plato-mixto"><div class="dish__btn"><span class="dish__img"><img src="img/menu/plato-mixto.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Plato mixto típico</span><span class="dish__desc">Combinación de filete con acompañamientos típicos.</span><span class="dish__foot"><span class="dish__price">$12.95</span></span></span></div></li><li class="dish" data-id="pescado-frito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pescado-frito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pescado frito</span><span class="dish__desc">Róbalo frito con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$10.00</span></span></span></div></li><li class="dish" data-id="lomito-tipico"><div class="dish__btn"><span class="dish__img"><img src="img/menu/lomito-tipico.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Lomito típico</span><span class="dish__desc">Lomito con acompañamientos típicos.</span><span class="dish__foot"><span class="dish__price">$8.99</span></span></span></div></li><li class="dish" data-id="lomito-parrilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/lomito-parrilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Lomito a la parrilla</span><span class="dish__desc">Lomito a la parrilla con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$8.50</span></span></span></div></li><li class="dish" data-id="pechuga-champinones"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pechuga-champinones.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pechuga en salsa de champiñones</span><span class="dish__desc">6 onzas de pechuga bañada en salsa de champiñones.</span><span class="dish__foot"><span class="dish__price">$8.50</span></span></span></div></li><li class="dish" data-id="chicharrones"><div class="dish__btn"><span class="dish__img"><img src="img/menu/chicharrones.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Chicharrones de carne</span><span class="dish__desc">Chicharrones de carne de la casa.</span><span class="dish__foot"><span class="dish__price">$7.95</span></span></span></div></li><li class="dish" data-id="pechuga-parrilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pechuga-parrilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pechuga a la parrilla</span><span class="dish__desc">Filete de pechuga de 5 onzas.</span><span class="dish__foot"><span class="dish__price">$7.50</span></span></span></div></li></ul></section>
+<section class="menu-group" id="cat-mariscos" aria-labelledby="cat-mariscos-h"><h3 class="menu-group__h" id="cat-mariscos-h">Mariscos <span class="menu-group__n">5 platillos</span></h3><ul class="dishes"><li class="dish" data-id="mar-y-tierra"><div class="dish__btn"><span class="dish__img"><img src="img/menu/mar-y-tierra.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Mar y tierra</span><span class="dish__desc">5 camarones jumbo al ajillo y carne.</span><span class="dish__foot"><span class="dish__price">$14.99</span></span></span></div></li><li class="dish" data-id="camarones-ajillo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/camarones-ajillo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Camarones al ajillo</span><span class="dish__desc">Camarones al ajillo con sus acompañamientos.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="camarones-empanizados"><div class="dish__btn"><span class="dish__img"><img src="img/menu/camarones-empanizados.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Camarones empanizados</span><span class="dish__desc">Camarones empanizados de la casa.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="coctel-rosada"><div class="dish__btn"><span class="dish__img"><img src="img/menu/coctel-rosada.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cóctel en salsa rosada</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="tacos-camaron"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-camaron.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de camarón</span><span class="dish__desc">3 tacos de camarón con queso.</span><span class="dish__foot"><span class="dish__price">$5.25</span></span></span></div></li></ul></section>
+<section class="menu-group" id="cat-antojitos" aria-labelledby="cat-antojitos-h"><h3 class="menu-group__h" id="cat-antojitos-h">Tacos, tortas y antojitos <span class="menu-group__n">13 platillos</span></h3><ul class="dishes"><li class="dish" data-id="comal-mexicano"><div class="dish__btn"><span class="dish__img"><img src="img/menu/comal-mexicano.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Comal mexicano</span><span class="dish__desc">Torta, burrito y más, para compartir.</span><span class="dish__foot"><span class="dish__price">$26.95</span></span></span></div></li><li class="dish" data-id="cazuela-alambre"><div class="dish__btn"><span class="dish__img"><img src="img/menu/cazuela-alambre.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cazuela de tacos de alambre</span><span class="dish__desc">Perfecta para compartir.</span><span class="dish__foot"><span class="dish__price">$18.99</span></span></span></div></li><li class="dish" data-id="taquiza-12"><div class="dish__btn"><span class="dish__img"><img src="img/menu/taquiza-12.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Taquiza de 12 tacos</span><span class="dish__desc">12 tacos de carne.</span><span class="dish__foot"><span class="dish__price">$15.95</span></span></span></div></li><li class="dish" data-id="nacho-familiar"><div class="dish__btn"><span class="dish__img"><img src="img/menu/nacho-familiar.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Nacho familiar</span><span class="dish__desc">Nachos familiares para compartir.</span><span class="dish__foot"><span class="dish__price">$9.00</span></span></span></div></li><li class="dish" data-id="tacos-birria"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-birria.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de birria, 4 unidades</span><span class="dish__desc">La orden de 3 cuesta $5.50.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="torta-birria"><div class="dish__btn"><span class="dish__img"><img src="img/menu/torta-birria.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Torta de birria</span><span class="dish__desc">Delicia de la casa.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="alitas"><div class="dish__btn"><span class="dish__img"><img src="img/menu/alitas.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Alitas búfalo o barbacoa</span><span class="dish__desc">Alitas fritas. Dinos la salsa en la nota.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="torta-res-pollo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/torta-res-pollo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Torta de res o pollo</span><span class="dish__desc">Torta rellena de la carne que escojas.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="panini"><div class="dish__btn"><span class="dish__img"><img src="img/menu/panini.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Panini de pollo o res</span><span class="dish__desc">Fajitas de pollo con queso cheddar.</span><span class="dish__foot"><span class="dish__price">$6.00</span></span></span></div></li><li class="dish" data-id="burrito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/burrito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Burrito de res o pollo</span><span class="dish__desc">Burrito de carne de res o pollo.</span><span class="dish__foot"><span class="dish__price">$5.75</span></span></span></div></li><li class="dish" data-id="sopa-tortilla"><div class="dish__btn"><span class="dish__img"><img src="img/menu/sopa-tortilla.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Sopa de tortilla</span><span class="dish__desc">Sopa de tortilla de la casa.</span><span class="dish__foot"><span class="dish__price">$5.75</span></span></span></div></li><li class="dish" data-id="tacos-res-pollo"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tacos-res-pollo.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tacos de res o pollo, orden de 3</span><span class="dish__desc">Precio de la orden de pollo; la de res puede variar.</span><span class="dish__foot"><span class="dish__price">$4.75</span></span></span></div></li><li class="dish" data-id="nachos-patu-boca"><div class="dish__btn"><span class="dish__img"><img src="img/menu/nachos-patu-boca.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Nachos Patu Boca</span><span class="dish__desc">Nachos con chili con carne y aguacate.</span><span class="dish__foot"><span class="dish__price">$3.99</span></span></span></div></li></ul></section>
+<section class="menu-group" id="cat-hamburguesas" aria-labelledby="cat-hamburguesas-h"><h3 class="menu-group__h" id="cat-hamburguesas-h">Hamburguesas <span class="menu-group__n">11 platillos</span></h3><ul class="dishes"><li class="dish" data-id="duo-dinamico"><div class="dish__btn"><span class="dish__img"><img src="img/menu/duo-dinamico.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Dúo dinámico</span><span class="dish__desc">2 hamburguesas.</span><span class="dish__foot"><span class="dish__price">$16.99</span></span></span></div></li><li class="dish" data-id="tropical-camaron"><div class="dish__btn"><span class="dish__img"><img src="img/menu/tropical-camaron.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Tropical de camarón</span><span class="dish__desc">Hamburguesa premium.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="suprema-tropical"><div class="dish__btn"><span class="dish__img"><img src="img/menu/suprema-tropical.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Suprema tropical</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="y-la-queso"><div class="dish__btn"><span class="dish__img"><img src="img/menu/y-la-queso.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Y la queso</span><span class="dish__desc">2 carnes bañadas en queso cheddar.</span><span class="dish__foot"><span class="dish__price">$9.95</span></span></span></div></li><li class="dish" data-id="hamburguesa-brava"><div class="dish__btn"><span class="dish__img"><img src="img/menu/hamburguesa-brava.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Hamburguesa brava</span><span class="dish__desc">Hamburguesa de pollo bañada en salsa.</span><span class="dish__foot"><span class="dish__price">$8.99</span></span></span></div></li><li class="dish" data-id="la-grosera"><div class="dish__btn"><span class="dish__img"><img src="img/menu/la-grosera.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La grosera</span><span class="dish__foot"><span class="dish__price">$8.00</span></span></span></div></li><li class="dish" data-id="chiken-pikis"><div class="dish__btn"><span class="dish__img"><img src="img/menu/chiken-pikis.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La Chiken Pikis</span><span class="dish__desc">Hamburguesa de pollo.</span><span class="dish__foot"><span class="dish__price">$7.25</span></span></span></div></li><li class="dish" data-id="traicionera"><div class="dish__btn"><span class="dish__img"><img src="img/menu/traicionera.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Traicionera</span><span class="dish__desc">Doble carne y doble queso.</span><span class="dish__foot"><span class="dish__price">$7.00</span></span></span></div></li><li class="dish" data-id="la-gruta"><div class="dish__btn"><span class="dish__img"><img src="img/menu/la-gruta.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">La Gruta</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$6.75</span></span></span></div></li><li class="dish" data-id="mi-rancho"><div class="dish__btn"><span class="dish__img"><img src="img/menu/mi-rancho.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Mi Rancho</span><span class="dish__desc">Hamburguesa de la casa.</span><span class="dish__foot"><span class="dish__price">$6.75</span></span></span></div></li><li class="dish" data-id="pica-rico-chipotle"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pica-rico-chipotle.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Pica Rico Chipotle</span><span class="dish__desc">Carne de res con salsa chipotle.</span><span class="dish__foot"><span class="dish__price">$6.50</span></span></span></div></li></ul></section>
+<section class="menu-group" id="cat-bebidas" aria-labelledby="cat-bebidas-h"><h3 class="menu-group__h" id="cat-bebidas-h">Bebidas y postre <span class="menu-group__n">6 platillos</span></h3><ul class="dishes"><li class="dish" data-id="pina-colada"><div class="dish__btn"><span class="dish__img"><img src="img/menu/pina-colada.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Piña colada con licor</span><span class="dish__desc">Jugo de piña y coco.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="rosita-fresita"><div class="dish__btn"><span class="dish__img"><img src="img/menu/rosita-fresita.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Rosita fresita</span><span class="dish__desc">Jugo de granadina y tequila.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="dulce-amanecer"><div class="dish__btn"><span class="dish__img"><img src="img/menu/dulce-amanecer.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Dulce amanecer</span><span class="dish__desc">Ron, jugo de naranja y vodka.</span><span class="dish__foot"><span class="dish__price">$4.25</span></span></span></div></li><li class="dish" data-id="azulito"><div class="dish__btn"><span class="dish__img"><img src="img/menu/azulito.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Azulito</span><span class="dish__desc">Tequila, jugo de naranja y soda.</span><span class="dish__foot"><span class="dish__price">$4.00</span></span></span></div></li><li class="dish" data-id="michelada-maracuya"><div class="dish__btn"><span class="dish__img"><img src="img/menu/michelada-maracuya.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Michelada de maracuyá</span><span class="dish__foot"><span class="dish__price">$4.00</span></span></span></div></li><li class="dish" data-id="cheesecake"><div class="dish__btn"><span class="dish__img"><img src="img/menu/cheesecake.webp" alt="" width="188" height="188" loading="lazy" decoding="async"></span><span class="dish__body"><span class="dish__name">Cheesecake de maracuyá, mora o fresa</span><span class="dish__desc">Incluye café. Dinos el sabor en la nota.</span><span class="dish__foot"><span class="dish__price">$3.95</span></span></span></div></li></ul></section><!--menu:end-->
+        </div>
+        <aside class="panel" aria-labelledby="panel-h" data-panel>
+          <div class="panel__in">
+            <h3 id="panel-h"><svg aria-hidden="true"><use href="#g-bolsa"/></svg>Tu pedido</h3>
+            <p class="panel__empty" data-panel-empty>Todavía no agregas nada. Toca un platillo para empezar.</p>
+            <ul class="panel__lines" data-panel-lines></ul>
+            <div class="panel__total"><span>Total</span><b data-cart-total data-panel-total>$0.00</b></div>
+            <button class="btn btn--teja btn--block" type="button" data-open-cart><svg aria-hidden="true"><use href="#g-wa"/></svg>Completar pedido</button>
+            <p class="panel__note"><svg aria-hidden="true"><use href="#g-reloj"/></svg><span data-panel-hora>Listo en unos 30 minutos.</span></p>
+          </div>
+        </aside>
       </div>
-      <noscript><p class="noscript-note">Para armar el pedido aquí se necesita JavaScript. También puedes escribirnos directo: <a class="link" href="https://wa.me/50375311377">WhatsApp +503 7531-1377</a></p></noscript>
+      <noscript><p class="noscript">Para armar el pedido aquí se necesita JavaScript. También puedes escribirnos directo por <a href="https://wa.me/50375311377">WhatsApp +503 7531-1377</a>.</p></noscript>
     </div>
   </section>
 
-  <section class="section section--hours" id="horario" data-place="visit" aria-labelledby="horario-h">
-    <div class="wrap grid grid--top">
-      <div class="span-6 hours-col">
-        <h2 id="horario-h">Horario de atención</h2>
-        <p class="status status--big" data-estado aria-live="polite"><span data-estado-texto>Todos los días de 12:00 p. m. a 10:00 p. m.</span></p>
-        <dl class="hours hours--week" data-horario data-assumed>
+  <!-- ===================================================== HORARIO -->
+  <section class="sec horario" id="horario" aria-labelledby="horario-h">
+    <svg class="deco deco--sol2" data-parallax="-0.1" aria-hidden="true"><use href="#g-sol"/></svg>
+    <div class="wrap horario__grid">
+      <div class="horario__live" data-reveal>
+        <p class="kicker kicker--light">Horario de atención</p>
+        <h2 id="horario-h"><span data-estado-titulo>Estamos abiertos</span></h2>
+        <p class="clock" aria-live="off"><span class="clock__label">En Suchitoto son las</span><span class="clock__time" data-reloj>12:00 p. m.</span></p>
+        <div class="day" data-dia-barra>
+          <div class="day__track"><div class="day__open" data-barra-abierto></div><div class="day__now" data-barra-ahora><span></span></div></div>
+          <div class="day__labels"><span>12 a. m.</span><span>6 a. m.</span><span>12 p. m.</span><span>6 p. m.</span><span>12 a. m.</span></div>
+        </div>
+        <p class="horario__msg" data-estado><span class="dot" aria-hidden="true"></span><span data-estado-detalle>Todos los días de 12:00 p. m. a 10:00 p. m.</span></p>
+        <p class="horario__falta" data-falta></p>
+      </div>
+      <div class="semana" data-reveal>
+        <h3>La semana</h3>
+        <dl class="semana__dl" data-horario data-assumed>
           <!--horario:start--><div class="hrow" data-dia="1"><dt>Lunes</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="2"><dt>Martes</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="3"><dt>Miércoles</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="4"><dt>Jueves</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="5"><dt>Viernes</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="6"><dt>Sábado</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><div class="hrow" data-dia="0"><dt>Domingo</dt><dd>12:00 p. m. a 10:00 p. m.</dd></div><!--horario:end-->
         </dl>
-        <p class="hours-note">Los pedidos para llevar se preparan en unos 30 minutos. Si estamos cerrados, tu pedido queda programado para la siguiente apertura.</p>
-      </div>
-      <figure class="pl-photo span-6 start-7" style="--pl-r: 1.333"><img src="assets/img/photo-f28544793-960.webp" srcset="assets/img/photo-f28544793-500.webp 500w, assets/img/photo-f28544793-960.webp 960w, assets/img/photo-f28544793-1280.webp 1280w" sizes="(max-width: 1023px) 100vw, 588px" width="1280" height="963" alt="Calle empedrada de Suchitoto bajo la sombra de los árboles, con casas de teja al fondo" loading="lazy" decoding="async" data-source="stand-in" data-subject="calle de Suchitoto"></figure>
-    </div>
-  </section>
-
-  <section class="section section--museo ground-inverse" id="museo" aria-labelledby="museo-h">
-    <div class="wrap">
-      <div class="museo">
-        <div class="museo__text">
-          <h2 id="museo-h">Un museo de reliquias dentro del restaurante</h2>
-          <p class="museo__lead">Entre las mesas guardamos un pequeño museo con reliquias. Es lo que más mencionan nuestros clientes en sus reseñas, junto con la comida.</p>
-          <p>Si pides para llevar, entra a verlo mientras preparamos tu pedido.</p>
-          <a class="link" href="#menu">Hacer mi pedido</a>
-        </div>
-        <figure class="museo__big" data-moment="picture-develops"><img src="assets/img/photo-f28638679-960.webp" srcset="assets/img/photo-f28638679-500.webp 500w, assets/img/photo-f28638679-960.webp 960w" sizes="(max-width: 1023px) 50vw, 384px" width="960" height="1433" alt="La iglesia de Santa Lucía, blanca y de estilo colonial, en el centro de Suchitoto" loading="lazy" decoding="async" data-source="stand-in" data-subject="Suchitoto, iglesia Santa Lucía"></figure>
-        <figure class="museo__sq"><img src="assets/img/photo-f28162635-960.webp" srcset="assets/img/photo-f28162635-500.webp 500w, assets/img/photo-f28162635-960.webp 960w, assets/img/photo-f28162635.webp 1280w" sizes="(max-width: 1023px) 70vw, 640px" width="1280" height="962" alt="Mural pintado en una pared de Suchitoto con un rostro y casas de teja" loading="lazy" decoding="async" data-source="stand-in" data-subject="mural de Suchitoto"></figure>
+        <p class="semana__nota">Los pedidos para llevar se preparan en unos 30 minutos. Si estamos cerrados, tu pedido queda programado para la siguiente apertura.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section--where" id="ubicacion" aria-labelledby="ubicacion-h">
-    <div class="wrap">
-      <h2 id="ubicacion-h">Dónde estamos</h2>
-      <p class="type-moment"><a href="https://www.google.com/maps/search/?api=1&amp;query=El+Rinconcito+del+Sabor+Suchitoto" target="_blank" rel="noopener">Suchitoto, Cuscatlán</a></p>
-      <div class="grid grid--top where">
-        <div class="span-6 where__text">
-          <p>En el centro colonial de Suchitoto, a pocas cuadras del Lago Suchitlán. Abre la ruta en tu aplicación de mapas.</p>
-          <div class="btn-row where__btns">
-            <a class="btn btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=El+Rinconcito+del+Sabor+Suchitoto" target="_blank" rel="noopener">Abrir en Google Maps</a>
-            <a class="btn btn--secondary" href="https://waze.com/ul?q=El%20Rinconcito%20del%20Sabor%20Suchitoto&amp;navigate=yes" target="_blank" rel="noopener">Abrir en Waze</a>
-          </div>
-          <p class="where__wa">¿Dudas antes de venir? <a class="link" href="https://wa.me/50375311377" data-wa="Hola, tengo una pregunta sobre El Rinconcito del Sabor.">Escribir por WhatsApp</a></p>
+  <!-- ===================================================== MUSEO -->
+  <section class="sec museo" id="museo" aria-labelledby="museo-h">
+    <div class="tiles tiles--top" aria-hidden="true"></div>
+    <div class="wrap museo__grid">
+      <div class="museo__text" data-reveal>
+        <p class="kicker kicker--sol">Algo que no esperabas</p>
+        <h2 id="museo-h">Un museo <span class="script">de reliquias</span> dentro del restaurante</h2>
+        <p class="museo__lead">Entre las mesas guardamos un pequeño museo con reliquias. Es lo que más mencionan nuestros clientes, junto con la comida.</p>
+        <p>Comer aquí es comer rodeado de historia, en una de las ciudades coloniales más bonitas de El Salvador. Si pides para llevar, entra a verlo mientras preparamos tu pedido.</p>
+        <a class="btn btn--sol" href="#ubicacion">Cómo llegar<svg aria-hidden="true"><use href="#g-flecha"/></svg></a>
+      </div>
+      <div class="museo__art">
+        <figure class="arch arch--tall" data-parallax="-0.06"><img data-parallax-img="0.06" src="assets/img/photo-f28638679-960.webp" srcset="assets/img/photo-f28638679-500.webp 500w, assets/img/photo-f28638679-960.webp 960w" sizes="(max-width: 900px) 60vw, 360px" width="960" height="1433" alt="La iglesia de Santa Lucía, blanca y colonial, en el centro de Suchitoto" loading="lazy" decoding="async"></figure>
+        <figure class="arch arch--small" data-parallax="-0.16"><img src="assets/img/photo-f28162635-960.webp" srcset="assets/img/photo-f28162635-500.webp 500w, assets/img/photo-f28162635-960.webp 960w" sizes="(max-width: 900px) 40vw, 240px" width="960" height="722" alt="Mural pintado en una pared de Suchitoto con un rostro y casas de teja" loading="lazy" decoding="async"></figure>
+        <figure class="arch arch--round" data-parallax="-0.12"><img src="img/menu/duo-dinamico.webp" alt="Interior del restaurante, con cuadros antiguos en la pared" width="188" height="188" loading="lazy" decoding="async"></figure>
+        <svg class="museo__flor" data-parallax="0.12" aria-hidden="true"><use href="#g-flor"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== UBICACIÓN -->
+  <section class="sec ubicacion" id="ubicacion" aria-labelledby="ubicacion-h">
+    <div class="wrap ubicacion__grid">
+      <div class="arch arch--lake" data-reveal><img data-parallax-img="0.06" src="assets/img/photo-f60360884-960.webp" srcset="assets/img/photo-f60360884-500.webp 500w, assets/img/photo-f60360884-960.webp 960w, assets/img/photo-f60360884.webp 1280w" sizes="(max-width: 900px) 90vw, 520px" width="1280" height="962" alt="El Lago Suchitlán con sus islas, visto desde los cerros de Suchitoto" loading="lazy" decoding="async"></div>
+      <div class="ubicacion__text" data-reveal>
+        <p class="kicker">Ven a visitarnos</p>
+        <h2 id="ubicacion-h">Dónde <span class="script">estamos</span></h2>
+        <p class="ubicacion__lugar"><svg aria-hidden="true"><use href="#g-pin"/></svg>Suchitoto, Cuscatlán</p>
+        <p>En el centro colonial de Suchitoto, entre calles empedradas y a pocas cuadras del Lago Suchitlán. Abre la ruta en tu aplicación favorita.</p>
+        <div class="ubicacion__btns">
+          <a class="btn btn--cafe" href="https://www.google.com/maps/search/?api=1&amp;query=El+Rinconcito+del+Sabor+Suchitoto" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btn--ghost" href="https://waze.com/ul?q=El%20Rinconcito%20del%20Sabor%20Suchitoto&amp;navigate=yes" target="_blank" rel="noopener">Abrir en Waze</a>
         </div>
-        <figure class="pl-photo span-6 start-7" style="--pl-r: 1.333"><img src="assets/img/photo-f60360884-960.webp" srcset="assets/img/photo-f60360884-500.webp 500w, assets/img/photo-f60360884-960.webp 960w, assets/img/photo-f60360884.webp 1280w" sizes="(max-width: 1023px) 100vw, 588px" width="1280" height="962" alt="El Lago Suchitlán con sus islas, visto desde los cerros de Suchitoto" loading="lazy" decoding="async" data-source="stand-in" data-subject="Lago Suchitlán"></figure>
+        <a class="wa-link" href="https://wa.me/50375311377" data-wa="Hola, tengo una pregunta sobre El Rinconcito del Sabor."><svg aria-hidden="true"><use href="#g-wa"/></svg>¿Dudas? Escríbenos por WhatsApp</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer closing footer--visit" id="contact" aria-labelledby="close-h">
+<footer class="pie" aria-labelledby="pie-h">
   <div class="wrap">
-    <div class="closing__cta close--photo">
-      <div class="section-head--split">
-        <div><h2 id="close-h">Tu pedido, listo cuando llegues</h2><p class="t-lead">Escoge del menú, envía por WhatsApp y recoge en Suchitoto.</p></div>
-        <a class="btn btn--primary" href="#menu">Pedir para llevar</a>
-      </div>
-      <div class="close__media"><img src="assets/img/photo-f110614199-960.webp" srcset="assets/img/photo-f110614199-500.webp 500w, assets/img/photo-f110614199-960.webp 960w, assets/img/photo-f110614199.webp 1280w" sizes="(max-width: 639px) 180vw, (max-width: 1023px) 100vw, 1200px" width="1280" height="962" alt="Calle empedrada de Suchitoto con fachadas coloniales blancas y amarillas" loading="lazy" decoding="async" data-source="stand-in" data-subject="calle de Suchitoto" style="--pos: 30% 60%"></div>
+    <div class="pie__cta" data-reveal>
+      <h2 id="pie-h">¿Se te antojó? <span class="script">Pide ya.</span></h2>
+      <a class="btn btn--sol btn--lg" href="#menu"><svg aria-hidden="true"><use href="#g-bolsa"/></svg>Pedir para llevar</a>
     </div>
-    <div class="closing__links">
-      <div class="grid foot-grid">
-        <div class="span-4 stack-4">
-          <img class="foot-logo" src="img/logo.webp" alt="Logo de El Rinconcito del Sabor" width="256" height="250" loading="lazy">
-          <h3>Contacto</h3>
-          <p><a class="link" href="https://wa.me/50375311377" data-wa="Hola, quiero hacer una consulta.">WhatsApp +503 7531-1377</a></p>
-          <p class="muted">Suchitoto, Cuscatlán, El Salvador</p>
-        </div>
-        <div class="span-4 stack-4">
-          <h3>Horario</h3>
-          <p class="status" data-estado><span data-estado-texto>Todos los días de 12:00 p. m. a 10:00 p. m.</span></p>
-          <p class="muted">Todos los días, 12:00 p. m. a 10:00 p. m.</p>
-        </div>
-        <nav class="span-4 stack-4 foot-nav" aria-label="Pie de página">
-          <h3>En esta página</h3>
-          <a href="#menu">Menú</a><a href="#horario">Horario</a><a href="#museo">Museo</a><a href="#ubicacion">Ubicación</a>
-        </nav>
+    <div class="pie__grid">
+      <div class="pie__brand">
+        <span class="pie__logo"><img src="img/logo.webp" alt="Logo de El Rinconcito del Sabor" width="256" height="250" loading="lazy"></span>
+        <p><span class="stars stars--sm" aria-hidden="true"><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg><svg><use href="#g-star"/></svg></span> 4.8 de nuestros clientes</p>
       </div>
-      <div class="footer__legal">
-        <p class="sr-only" id="avisos" aria-live="polite"></p>
-        <span>&copy; 2026 El Rinconcito del Sabor · Vista previa preparada por Escobar Net</span>
-        <a class="credits" href="credits.html">Fotos de Suchitoto vía Wikimedia Commons</a>
+      <div>
+        <h3>Horario</h3>
+        <p class="pie__estado" data-estado><span class="dot" aria-hidden="true"></span><span data-estado-texto>Todos los días de 12:00 p. m. a 10:00 p. m.</span></p>
+        <p>Todos los días, de 12:00 p. m. a 10:00 p. m.</p>
       </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><a href="https://wa.me/50375311377" data-wa="Hola, quiero hacer una consulta.">WhatsApp +503 7531-1377</a></p>
+        <p>Suchitoto, Cuscatlán, El Salvador</p>
+      </div>
+      <nav aria-label="Pie de página">
+        <h3>Explora</h3>
+        <a href="#menu">Menú</a><a href="#horario">Horario</a><a href="#museo">Museo</a><a href="#ubicacion">Ubicación</a>
+      </nav>
+    </div>
+    <div class="pie__legal">
+      <span>© 2026 El Rinconcito del Sabor · Vista previa preparada por Escobar Net</span>
+      <a href="credits.html">Fotos de Suchitoto vía Wikimedia Commons</a>
+      <p class="sr" id="avisos" aria-live="polite"></p>
     </div>
   </div>
 </footer>
-
-<nav class="actionbar" aria-label="Acción rápida">
-  <a class="btn btn--primary" href="#menu">Pedir para llevar</a>
-</nav>
 
 <div class="cartbar" aria-hidden="true" inert>
   <button class="cartbar__btn" type="button" data-open-cart aria-haspopup="dialog">
@@ -233,7 +303,7 @@
         <label for="nota-platillo">Nota para la cocina <span class="muted">(opcional)</span></label>
         <textarea id="nota-platillo" name="nota" rows="2" maxlength="140" placeholder="Por ejemplo: sin cebolla" enterkeyhint="done"></textarea>
       </div>
-      <button class="btn btn--primary btn--sheet" type="submit" data-item-cta>Agregar 1 al pedido<span class="btn__total" data-item-total>$0.00</span></button>
+      <button class="btn btn--teja btn--sheet" type="submit" data-item-cta>Agregar 1 al pedido<span class="btn__total" data-item-total>$0.00</span></button>
     </form>
   </div>
 </dialog>
@@ -249,7 +319,7 @@
     <div class="sheet__scroll">
       <div class="cart-empty">
         <p>Tu pedido está vacío. Toca cualquier platillo del menú para agregarlo.</p>
-        <a class="btn btn--secondary" href="#menu" data-to-menu>Ver el menú</a>
+        <a class="btn btn--ghost" href="#menu" data-to-menu>Ver el menú</a>
       </div>
       <ul class="lines" data-lines></ul>
       <form class="order" data-order-form novalidate>
@@ -265,18 +335,15 @@
           <select id="hora-recogida" name="hora" required aria-describedby="hora-err"><option value="">Escoge una hora</option></select>
           <p class="field__error" id="hora-err" hidden></p>
         </div>
-        <button class="btn btn--primary btn--sheet btn--wa" type="submit"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.43 9.42zm8.02-17.45A11.27 11.27 0 0 0 12.04.75C5.8.75.72 5.83.72 12.07c0 2 .52 3.94 1.51 5.65L.62 23.25l5.66-1.48a11.3 11.3 0 0 0 5.75 1.47h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.02-1.18-5.87-3.31-8z"/></svg>Enviar pedido por WhatsApp</button>
+        <button class="btn btn--wa btn--sheet" type="submit"><svg aria-hidden="true"><use href="#g-wa"/></svg>Enviar pedido por WhatsApp</button>
         <p class="sent-note" data-sent-note hidden>Se abrió WhatsApp con tu pedido. Presiona enviar allá para que el restaurante lo reciba.</p>
       </form>
     </div>
   </div>
 </dialog>
 
-
 <script src="js/config.js"></script>
 <script src="js/app.js"></script>
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
+<script src="js/motion.js"></script>
 </body>
 </html>

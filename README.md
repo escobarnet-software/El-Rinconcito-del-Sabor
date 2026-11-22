@@ -12,11 +12,12 @@ Después de editar, corre `node tools/render.mjs` para copiar el menú y el hora
 
 ## Archivos
 - `index.html`, `credits.html`: la página y los créditos de las fotos.
-- `css/app.css`, `js/app.js`, `js/config.js`: estilos, lógica del pedido y configuración.
-- `assets/`: el sistema de diseño (solo los archivos que la página usa) y las fotos de Suchitoto.
+- `css/styles.css`: estilos (colores y tipografía sacados del logo: Pacifico, Bricolage Grotesque, Nunito Sans).
+- `js/config.js`, `js/app.js`, `js/motion.js`: configuración, lógica del pedido y animaciones (entrada, parallax, aparición al bajar).
+- `assets/img/`: fotos de Suchitoto (Wikimedia Commons).
 - `img/`: logo y fotos de los platillos (del catálogo de WhatsApp del restaurante).
 - `share.jpg`: imagen para cuando se comparte el enlace en WhatsApp.
-- `capturas/`: capturas de celular (390 px) de la vista previa.
+- `capturas/`: capturas de celular (390 px) y de escritorio de la vista previa.
 - `tools/`: script del menú estático y las plantillas de `share.jpg` y de la simulación del mensaje.
 
 Prueba de casos extremos: abre `index.html?datos=peor` (nombre larguísimo, pedido de 73 artículos, emojis).

@@ -8,6 +8,12 @@
 window.RINCONCITO = {
   nombre: 'El Rinconcito del Sabor',
 
+  // Calificación que se muestra en la portada
+  calificacion: '4.8',
+
+  // Platillos de "Los favoritos de la casa" (usa el id de cada platillo)
+  destacados: ['parrillada-2', 'taquiza-12', 'tropical-camaron', 'mar-y-tierra'],
+
   // Número de WhatsApp solo con dígitos: código de país (503) + número.
   whatsapp: '50375311377',
   whatsappVisible: '+503 7531-1377',
