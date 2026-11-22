@@ -361,7 +361,7 @@
   });
 
   document.addEventListener('click', e => {
-    const btn = e.target.closest('button.dish__btn, .fav__btn'); if (!btn) return;
+    const btn = e.target.closest('button.dish__btn, .fav__btn, .oplate'); if (!btn) return;
     openItem(btn.closest('[data-id]').dataset.id, btn);
   });
 
@@ -550,6 +550,14 @@
   $$('[data-wa]').forEach(a => { a.href = `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(a.dataset.wa)}`; });
 
   const chips = () => $$('.chip');
+
+  // Platos de la portada: nombre accesible y precio desde la configuración
+  $$('.oplate').forEach(b => {
+    const p = byId.get(b.dataset.id); if (!p) { b.hidden = true; return; }
+    b.setAttribute('aria-label', `Agregar ${p.nombre}, ${money(p.precio)}`);
+    b.setAttribute('aria-haspopup', 'dialog');
+    const t = $('[data-oplate-precio]', b); if (t) t.textContent = money(p.precio);
+  });
 
   /* ------------------------------------------------------------ inicio */
   renderMenu();

@@ -101,18 +101,27 @@
         </div>
       </div>
 
-      <div class="hero__art" aria-hidden="true">
-        <svg class="cipres cipres--a" data-parallax="0.06"><use href="#g-cipres"/></svg>
-        <svg class="cipres cipres--b" data-parallax="0.1"><use href="#g-cipres"/></svg>
-        <div class="arch arch--hero" data-arch>
-          <img data-parallax-img="0.07" src="assets/img/photo-f28544787-960.webp" srcset="assets/img/photo-f28544787-500.webp 500w, assets/img/photo-f28544787-960.webp 960w, assets/img/photo-f28544787-1280.webp 1280w" sizes="(max-width: 900px) 80vw, 460px" width="960" height="1280" alt="" fetchpriority="high">
-        </div>
-        <div class="plate plate--1" data-parallax="-0.18"><div class="plate__in"><img src="img/menu/parrillada-2.webp" alt="" width="188" height="188"></div></div>
-        <div class="plate plate--2" data-parallax="-0.3"><div class="plate__in"><img src="img/menu/taquiza-12.webp" alt="" width="188" height="188"></div></div>
-        <div class="plate plate--3" data-parallax="-0.1"><div class="plate__in"><img src="img/menu/azulito.webp" alt="" width="188" height="188"></div></div>
-        <div class="badge" data-parallax="-0.22">
-          <svg class="badge__ring" viewBox="0 0 200 200"><defs><path id="circulo" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#circulo">PEDIDOS PARA LLEVAR · POR WHATSAPP · </textPath></text></svg>
-          <svg class="badge__casa"><use href="#g-casa"/></svg>
+      <div class="hero__art">
+        <div class="mesa" data-mesa>
+          <div class="mesa__sol" data-parallax="-0.06" aria-hidden="true"></div>
+          <div class="mesa__aro" aria-hidden="true"></div>
+          <svg class="mesa__cipres mesa__cipres--a" aria-hidden="true"><use href="#g-cipres"/></svg>
+          <svg class="mesa__cipres mesa__cipres--b" aria-hidden="true"><use href="#g-cipres"/></svg>
+          <svg class="mesa__flor mesa__flor--a" aria-hidden="true"><use href="#g-flor"/></svg>
+          <svg class="mesa__flor mesa__flor--b" aria-hidden="true"><use href="#g-flor"/></svg>
+          <div class="mesa__orbita" data-orbita>
+          <button class="oplate" type="button" data-id="parrillada-2" style="--a:0deg; --i:0"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/parrillada-2.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          <button class="oplate" type="button" data-id="taquiza-12" style="--a:60deg; --i:1"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/taquiza-12.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          <button class="oplate" type="button" data-id="tropical-camaron" style="--a:120deg; --i:2"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/tropical-camaron.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          <button class="oplate" type="button" data-id="azulito" style="--a:180deg; --i:3"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/azulito.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          <button class="oplate" type="button" data-id="mar-y-tierra" style="--a:240deg; --i:4"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/mar-y-tierra.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          <button class="oplate" type="button" data-id="cheesecake" style="--a:300deg; --i:5"><span class="oplate__up"><span class="oplate__in"><img src="img/menu/cheesecake.webp" alt="" width="188" height="188"></span><span class="oplate__tag" data-oplate-precio></span></span></button>
+          </div>
+          <div class="mesa__centro" aria-hidden="true">
+            <svg class="mesa__ring" viewBox="0 0 200 200"><defs><path id="circulo" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#circulo">PEDIDOS PARA LLEVAR · POR WHATSAPP · </textPath></text></svg>
+            <img class="mesa__logo" src="img/logo.webp" alt="" width="256" height="250" fetchpriority="high">
+          </div>
+          <p class="mesa__hint" aria-hidden="true">Toca un plato para pedirlo</p>
         </div>
       </div>
     </div>
@@ -204,10 +213,10 @@
         <a class="btn btn--sol" href="#ubicacion">Cómo llegar<svg aria-hidden="true"><use href="#g-flecha"/></svg></a>
       </div>
       <div class="museo__art">
-        <figure class="arch arch--tall" data-parallax="-0.06"><img data-parallax-img="0.06" src="assets/img/photo-f28638679-960.webp" srcset="assets/img/photo-f28638679-500.webp 500w, assets/img/photo-f28638679-960.webp 960w" sizes="(max-width: 900px) 60vw, 360px" width="960" height="1433" alt="La iglesia de Santa Lucía, blanca y colonial, en el centro de Suchitoto" loading="lazy" decoding="async"></figure>
-        <figure class="arch arch--small" data-parallax="-0.16"><img src="assets/img/photo-f28162635-960.webp" srcset="assets/img/photo-f28162635-500.webp 500w, assets/img/photo-f28162635-960.webp 960w" sizes="(max-width: 900px) 40vw, 240px" width="960" height="722" alt="Mural pintado en una pared de Suchitoto con un rostro y casas de teja" loading="lazy" decoding="async"></figure>
-        <figure class="arch arch--round" data-parallax="-0.12"><img src="img/menu/duo-dinamico.webp" alt="Interior del restaurante, con cuadros antiguos en la pared" width="188" height="188" loading="lazy" decoding="async"></figure>
-        <svg class="museo__flor" data-parallax="0.12" aria-hidden="true"><use href="#g-flor"/></svg>
+        <figure class="postal postal--a" data-parallax="-0.05"><img src="assets/img/photo-f28638679-960.webp" srcset="assets/img/photo-f28638679-500.webp 500w, assets/img/photo-f28638679-960.webp 960w" sizes="(max-width: 900px) 55vw, 330px" width="960" height="1433" alt="La iglesia de Santa Lucía, blanca y colonial, en el centro de Suchitoto" loading="lazy" decoding="async"><figcaption>Suchitoto</figcaption></figure>
+        <figure class="postal postal--b" data-parallax="-0.14"><img src="assets/img/photo-f28162635-960.webp" srcset="assets/img/photo-f28162635-500.webp 500w, assets/img/photo-f28162635-960.webp 960w" sizes="(max-width: 900px) 50vw, 300px" width="960" height="722" alt="Mural pintado en una pared de Suchitoto con un rostro y casas de teja" loading="lazy" decoding="async"><figcaption>Arte en las calles</figcaption></figure>
+        <figure class="postal postal--c" data-parallax="-0.22"><img src="img/menu/duo-dinamico.webp" alt="Interior del restaurante, con cuadros antiguos en la pared" width="188" height="188" loading="lazy" decoding="async"><figcaption>Nuestro salón</figcaption></figure>
+        <span class="sello" aria-hidden="true"><svg><use href="#g-casa"/></svg></span>
       </div>
     </div>
   </section>
@@ -215,7 +224,7 @@
   <!-- ===================================================== UBICACIÓN -->
   <section class="sec ubicacion" id="ubicacion" aria-labelledby="ubicacion-h">
     <div class="wrap ubicacion__grid">
-      <div class="arch arch--lake" data-reveal><img data-parallax-img="0.06" src="assets/img/photo-f60360884-960.webp" srcset="assets/img/photo-f60360884-500.webp 500w, assets/img/photo-f60360884-960.webp 960w, assets/img/photo-f60360884.webp 1280w" sizes="(max-width: 900px) 90vw, 520px" width="1280" height="962" alt="El Lago Suchitlán con sus islas, visto desde los cerros de Suchitoto" loading="lazy" decoding="async"></div>
+      <div class="lago" data-reveal><img data-parallax-img="0.06" src="assets/img/photo-f60360884-960.webp" srcset="assets/img/photo-f60360884-500.webp 500w, assets/img/photo-f60360884-960.webp 960w, assets/img/photo-f60360884.webp 1280w" sizes="(max-width: 900px) 90vw, 520px" width="1280" height="962" alt="El Lago Suchitlán con sus islas, visto desde los cerros de Suchitoto" loading="lazy" decoding="async"><span class="lago__sello" aria-hidden="true"><svg><use href="#g-pin"/></svg><b>A pocas cuadras del lago</b></span></div>
       <div class="ubicacion__text" data-reveal>
         <h2 id="ubicacion-h">Dónde <span class="script">estamos</span></h2>
         <p class="ubicacion__lugar"><svg aria-hidden="true"><use href="#g-pin"/></svg>Suchitoto, Cuscatlán</p>

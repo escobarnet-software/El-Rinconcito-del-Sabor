@@ -90,9 +90,18 @@
   if (tabsEl) new MutationObserver(placeInk).observe(tabsEl, { subtree: true, attributes: true, attributeFilter: ['class'] });
   addEventListener('resize', placeInk, { passive: true });
 
-  /* ---------------------------- la insignia que gira se detiene fuera de vista */
-  const badge = $('.badge');
-  if (badge && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([en]) => badge.classList.toggle('is-off', !en.isIntersecting)).observe(badge);
+  /* ---------------------------- la mesa que gira se detiene fuera de vista */
+  const mesa = $('[data-mesa]');
+  if (mesa && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => mesa.classList.toggle('is-off', !en.isIntersecting)).observe(mesa);
+  }
+  // al tocar la mesa en un celular, la órbita se detiene unos segundos para atinarle al plato
+  if (mesa) {
+    let t = 0;
+    mesa.addEventListener('pointerdown', e => {
+      if (e.pointerType === 'mouse') return;
+      mesa.classList.add('is-held'); clearTimeout(t);
+      t = setTimeout(() => mesa.classList.remove('is-held'), 4000);
+    }, { passive: true });
   }
 })();
