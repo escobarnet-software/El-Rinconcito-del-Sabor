@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-22T05:21:44.690Z",
+        "reason": "Claude decidió: las secciones con fondo tienen el contenido dentro de .wrap (margen lateral 20-48px) y padding vertical de 88-144px; el detector no cuenta el .wrap"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-22T05:21:44.699Z",
+        "reason": "Claude decidió: los hallazgos restantes son texto grande (reloj 48-68px y frase en Pacifico 38-64px) amarillo #e8ad3f sobre #8e331c a 4.0:1, que cumple el 3:1 de WCAG AA para texto grande"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-22T05:21:55.588Z",
+        "reason": "Claude decidió: es el contorno de 2px color café (#2b170c) de los arcos y platos, un trazo como el del logo, no un brillo"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-22T05:21:55.595Z",
+        "reason": "Claude decidió: el h1 y los h2 ponen el tamaño en sus spans (Pacifico 54-100px, h2 38-64px); el detector lee el 17px del contenedor"
+      }
+    ]
+  }
+}
